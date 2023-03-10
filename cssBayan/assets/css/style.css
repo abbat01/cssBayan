@@ -1,0 +1,125 @@
+:root {
+    --bg-color: #3146a4;
+    --midnight: #0c0f53;
+    --midnight-dark: #090b39;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 0 20px;
+    max-width: 1400px;
+}
+
+/* header wrapper */
+
+.header {
+    background-color: var(--bg-color);
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* main wrapper */
+
+.main {
+    height: 500px;
+}
+/* accordion */
+.main h1 {
+    margin: 0;
+    line-height: 2;
+    text-align: center;
+  }
+  
+.main  h2 {
+    margin: 0 0 0.5em;
+    font-weight: normal;
+  }
+  
+.main  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  
+.main  .row {
+    display: flex;
+  }
+.main  .row .col {
+    flex: 1;
+  }
+  .main  .row .col:last-child {
+    margin-left: 1em;
+  }
+  
+  /* Accordion styles */
+  .main  .tabs {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .main .tab {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+  }
+  .main  .tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: var(--midnight);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .main .tab-label:hover {
+    background-color: var(--midnight-dark);
+  }
+  .main .tab-label::after {
+    content: "❯";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all 0.35s;
+  }
+  .main .tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    background: var(--midnight-dark);
+    transition: all 0.35s;
+  }
+  .main .tab-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    cursor: pointer;
+  }
+  
+  .main input:checked + .tab-label::after {
+    transform: rotate(90deg);
+  }
+  .main  input:checked ~ .tab-content {
+    max-height: 100vh;
+    padding: 1em;
+  }
+
+.footer {
+    position: relative;
+    bottom: 0px;
+    background-color: var(--bg-color);
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
